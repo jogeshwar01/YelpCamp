@@ -1,3 +1,5 @@
+//just run this one time to get our data seeded
+
 const mongoose = require('mongoose');
 const cities = require('./cities');
 const { places, descriptors } = require('./seedHelpers');
