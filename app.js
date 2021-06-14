@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
+
 const Campground = require("./models/campground");
 
 mongoose.connect('mongodb://localhost:27017/yelp-camp', {
@@ -23,6 +25,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.use(express.urlencoded({ extended: true }));    //to handle post requests as our res.body will be empty otherwise,here we parse it
+app.use(methodOverride('_method'));
 
 
 app.get('/', (req, res) => {
@@ -53,6 +56,20 @@ app.get('/campgrounds/:id', async (req, res,) => {
     const campground = await Campground.findById(req.params.id)
     res.render('campgrounds/show', { campground });
 });
+
+
+//edit request -- we use PUT here in edit.ejs by faking it using method-override
+app.get('/campgrounds/:id/edit', async (req, res) => {
+    const campground = await Campground.findById(req.params.id)
+    res.render('campgrounds/edit', { campground });
+})
+
+app.put('/campgrounds/:id', async (req, res) => {
+    const { id } = req.params;
+    const campground = await Campground.findByIdAndUpdate(id, { ...req.body.campground });
+    res.redirect(`/campgrounds/${campground._id}`)
+});
+
 
 
 app.listen(3000, () => {
