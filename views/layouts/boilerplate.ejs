@@ -15,9 +15,8 @@
     <%- include('../partials/navbar') %>
 
         <main class="container mt-5">
-            <%= success %>
-                <%= error %>
-                    <%- body %>
+            <%- include('../partials/flash')%>
+                <%- body %>
         </main>
 
         <%- include('../partials/footer') %>
