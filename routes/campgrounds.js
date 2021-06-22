@@ -28,7 +28,18 @@ router.post('/', isLoggedIn, validateCampground, catchAsync(async (req, res, nex
 }))
 
 router.get('/:id', catchAsync(async (req, res,) => {
-    const campground = await (await Campground.findById(req.params.id).populate('reviews').populate('author'));
+    //using nested populate one for the creator of campground and one for the creator of review
+
+    //if we only needed the username,we can just store the username in each review
+    //if we need full info,then this is a good method
+
+    const campground = await Campground.findById(req.params.id).populate({
+        path: 'reviews',
+        populate: {
+            path: 'author'  //creator of review
+        }
+    }).populate('author');  //creator of campground
+
     if (!campground) {
         req.flash('error', 'Cannot find that campground!');
         return res.redirect('/campgrounds');
