@@ -169,7 +169,7 @@
   
   .starability-heartbeat > label {
     position: relative;
-    display: inline-block;
+    display: flex;      /* this was display:inline-block in original file */
     float: left;
     width: 30px;
     height: 30px;
