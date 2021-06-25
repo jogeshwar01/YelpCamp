@@ -5,7 +5,8 @@ const { isLoggedIn, isAuthor, validateCampground } = require('../middleware');
 const campgrounds = require('../controllers/campgrounds');
 
 const multer = require('multer')
-const upload = multer({ dest: 'uploads/' })
+const { storage } = require('../cloudinary'); //no need to do /index as node looks for index.js file if nothing specified
+const upload = multer({ storage });
 
 const Campground = require('../models/campground');
 
