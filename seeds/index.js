@@ -30,9 +30,19 @@ const seedDB = async () => {
             author: '60d07bdeb97f6a08d09ba661', //connect all campgrounds to jog using his id at start (see id from mongoDB)
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-            image: 'https://source.unsplash.com/collection/483251',
             description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid sunt, error voluptate, natus deleniti obcaecati qui earum consequuntur, pariatur ratione quo suscipit! Veniam voluptas provident corporis aliquam illum velit quis.',
-            price: price
+            price: price,
+            images: [
+                {
+                    url: 'https://res.cloudinary.com/dd6eufkzk/image/upload/v1624620047/YelpCamp/wbzbwrjnivc5mmvyz8zk.jpg',
+                    filename: 'YelpCamp/wbzbwrjnivc5mmvyz8zk'
+                },
+                {
+                    url: 'https://res.cloudinary.com/dd6eufkzk/image/upload/v1624620047/YelpCamp/oin2zvkpypw95glvxytk.jpg',
+                    filename: 'YelpCamp/oin2zvkpypw95glvxytk'
+                }
+            ]
+
         })      //title randomly taken using sample function
         await camp.save();
     }
