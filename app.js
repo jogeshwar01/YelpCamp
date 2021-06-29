@@ -52,11 +52,13 @@ app.use(mongoSanitize());
 
 
 const sessionConfig = {
+    name: 'session',    //easy basic protection
     secret: 'thisshouldbeabettersecret!',
     resave: false,
     saveUninitialized: true,
     cookie: {
         httpOnly: true,
+        // secure: true,   //to make work only with https (localhost is not http so we dont want this right now but only after deploying)
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,      //date.now() returns milliseconds,so according to that we calculate the ms to expire it after a week
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
