@@ -42,11 +42,15 @@
         <% }%>
             <script>
                 const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-                const campground = '<%- JSON.stringify(campgrounds) %>';
+
+                //did the next 2 lines combined in one line
+                // const campground = '<%- JSON.stringify(campgrounds) %>';
+                // const campgrounds = { features: JSON.parse(campground) };
+
+                const campgrounds = { features: JSON.parse('<%- JSON.stringify(campgrounds) %>') }
 
                 //not in the video,did this as json.stringify was not working without quotes so to convert string to object
                 //also we need the data in a specific format like here features: as our cluster map is set like this
-                const campgrounds = { features: JSON.parse(campground) };
 
             </script>
 
