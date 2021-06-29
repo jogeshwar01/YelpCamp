@@ -121,6 +121,9 @@
 
     <script>
         const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+        const campgrounds = '<%- JSON.stringify(campground) %>';
+        const campground = JSON.parse(campgrounds); //not in the video,did this as json.stringify was not working without quotes so to convert string to object
+
     </script>
 
     <script src="/javascripts/showPageMap.js"></script>
