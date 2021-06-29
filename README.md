@@ -1,4 +1,17 @@
-# YelpCamp
+<div align="right">
+  <img src="https://img.shields.io/badge/Completion-100%25-blue.svg" />
+  <a href="https://github.com/Hsins/udemy_Yelp-Camp/blob/master/LICENSE" alt="License">
+    <img src="https://img.shields.io/github/license/Hsins/udemy_Yelp-Camp.svg" />
+  </a>
+</div>
+
+<div>
+  <h1>🏕️ YelpCamp 🌲</h1>
+</div>
+
+<div align="center">
+  <h2>- Development Process -</h2>
+</div>
 
 YelpCamp is a website where users can create and review campgrounds. In order to review or create a campground, you must have an account. This project was part of Colt Steele's web dev course on udemy.  
 
