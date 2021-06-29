@@ -14,6 +14,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 
+//sanitizes user-supplied data to prevent MongoDB Operator Injection.
+const mongoSanitize = require('express-mongo-sanitize');
 
 const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
@@ -44,6 +46,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true }));    //to handle post requests as our res.body will be empty otherwise,here we parse it
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')))
+
+// To remove data, use:
+app.use(mongoSanitize());
 
 
 const sessionConfig = {
