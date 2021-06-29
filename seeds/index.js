@@ -33,8 +33,11 @@ const seedDB = async () => {
             description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid sunt, error voluptate, natus deleniti obcaecati qui earum consequuntur, pariatur ratione quo suscipit! Veniam voluptas provident corporis aliquam illum velit quis.',
             price: price,
             geometry: {
-                "type": "Point",
-                "coordinates": [-122.3301, 47.6038]
+                type: "Point",
+                coordinates: [
+                    cities[random1000].longitude, //in geoJSON we want longitude first then latitude
+                    cities[random1000].latitude,
+                ]
             },
             images: [
                 {
