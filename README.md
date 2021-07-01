@@ -24,24 +24,44 @@ This project was created using Node.js, Express, MongoDB, and Bootstrap. Passpor
 * Search campground by name or location
 * Sort campgrounds by highest rating, most reviewed, lowest price, or highest price
 
-## Run it locally
-1. Install [mongodb](https://www.mongodb.com/)
-2. Create a cloudinary account to get an API key and secret code
+## Getting Started
 
-```
-git clone https://github.com/jogeshwar01/YelpCamp.git
-cd yelpcamp
-npm install
-```
+### Prerequisites
 
-Create a .env file (or just export manually in the terminal) in the root of the project and add the following:  
+1. **Node.js** for running server-side JavaScript. You can find instructions on how to download and install Node.js for your computer [here](https://nodejs.org/en/download/)
 
-```
-DATABASEURL='<url>'
-API_KEY=''<key>
-API_SECRET='<secret>'
-```
+2. **MongoDB** (Community Edition preferrably) to store data. Instructions on downloading and installing MongoDB on your computer can be found [here](https://docs.mongodb.com/manual/installation/)
 
-Run ```mongod``` in another terminal and ```node app.js``` in the terminal with the project.  
+### Installing
 
-Then go to [localhost:3000](http://localhost:3000/).
+Once you have Node.js and MongoDB installed on your computer,
+
+1. run `git clone https://github.com/jogeshwar01/YelpCamp.git` on your Git terminal.
+2. In the directory of the folder `yelpcamp` containing the files of the repositiory, open up the terminal and run `npm install`
+3. Once installation is complete, run `npm start` on the same terminal.
+4. Open your web browser and visit the address `localhost:3000` and voila!
+5. Sign up to use the awesome features of the app!
+
+## Built With
+
+- [Node.js](https://nodejs.org) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+- [express](https://expressjs.com//) - Fast, unopinionated, minimalist web framework for Node.js
+- [MongoDB](https://www.mongodb.com/) - The database for
+  modern applications
+- [Mongoose](https://mongoosejs.com/) - Elegant MongoDB object modeling for Node.js
+- [ejs](https://ejs.co/) - Embedded JavaScript templating
+
+## Contributing
+
+You can add your new features and pull a request, I will sure look into that.
+
+1.  Fork it!
+2.  Create your feature branch: `git checkout -b my-new-feature`
+3.  Add your changes: `git add .`
+4.  Commit your changes: `git commit -am 'Add some feature'`
+5.  Push to the branch: `git push origin my-new-feature`
+6.  Submit a pull request :sunglasses:
+
+## Owner
+
+-   **Jogeshwar Singh** 
